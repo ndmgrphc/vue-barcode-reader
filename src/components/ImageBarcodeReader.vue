@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import { BrowserMultiFormatReader } from "@zxing/library/udm";
+import { BrowserMultiFormatReader } from "@zxing/library/umd";
 
 export default {
     name: "image-barcode-reader",
