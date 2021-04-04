@@ -26,7 +26,7 @@ export default {
     },
     props: {
         hints: {
-            type: Object
+            type: [Object, Map]
         }
     },
     mounted() {
