@@ -17,18 +17,28 @@ export default {
     data() {
         return {
             isLoading: true,
-            codeReader: new BrowserMultiFormatReader(),
+            codeReader: null,
             isMediaStreamAPISupported:
                 navigator &&
                 navigator.mediaDevices &&
                 "enumerateDevices" in navigator.mediaDevices
         };
     },
-
+    props: {
+        hints: {
+            type: Object
+        }
+    },
     mounted() {
         if (!this.isMediaStreamAPISupported) {
             throw new Exception("Media Stream API is not supported");
             return;
+        }
+        
+        this.codeReader = new BrowserMultiFormatReader();
+        
+        if (this.hints) {
+            this.codeReader.setHints(this.hints);
         }
 
         this.start();
