@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import { BrowserMultiFormatReader, Exception } from "@zxing/library";
+import { BrowserMultiFormatReader, Exception } from "@zxing/library/umd";
 
 export default {
     name: "stream-barcode-reader",
